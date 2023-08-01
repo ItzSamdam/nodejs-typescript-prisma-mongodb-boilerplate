@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f2b7c8-2357-410e-8bf0-9e580bf39f4a" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    <list default="true" id="a5f2b7c8-2357-410e-8bf0-9e580bf39f4a" name="Changes" comment="project services and refactoring">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/tokenService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/tokenService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690905489007</updated>
       <workItem from="1690905490244" duration="3631000" />
-      <workItem from="1690909142587" duration="1991000" />
+      <workItem from="1690909142587" duration="7480000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit and folder structures">
       <created>1690905905665</created>
@@ -98,7 +102,28 @@
       <option name="project" value="LOCAL" />
       <updated>1690908017558</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial commit">
+      <created>1690920525916</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690920525916</updated>
+    </task>
+    <task id="LOCAL-00005" summary="project services and refactoring">
+      <created>1690920651517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690920651517</updated>
+    </task>
+    <task id="LOCAL-00006" summary="project services and refactoring">
+      <created>1690920673715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690920673715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +137,7 @@
     <MESSAGE value="config setup" />
     <MESSAGE value="services, controllers,validator extraction" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="project services and refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="project services and refactoring" />
   </component>
 </project>

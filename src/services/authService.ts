@@ -54,7 +54,7 @@ const logout = async (refreshToken: string): Promise<void> => {
 };
 
 /**
- * Refresh authMiddleware tokens
+ * Refresh auth tokens
  * @param {string} refreshToken
  * @returns {Promise<AuthTokensResponse>}
  */

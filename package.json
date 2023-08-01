@@ -4,7 +4,16 @@
   "description": "REST API Boilerplate with Node JS, TypeScript, Express and Prisma",
   "main": "src/server.ts",
   "repository": "https://github.com/ItzSamdam/nodejs-typescript-prisma-mongodb-boilerplate.git",
-  "scripts": {},
+  "scripts": {
+    "start": "npm build && pm2 start ecosystem.config.json --no-daemon",
+    "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.ts",
+    "prettier:fix": "prettier --write **/*.ts"
+  },
   "keywords": [
     "node",
     "typescript",
@@ -45,7 +54,7 @@
     "node-mocks-http": "^1.12.1",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
-    "prisma": "^4.10.1",
+    "prisma": "^5.1.0",
     "supertest": "^6.3.3",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.6.0",
@@ -54,7 +63,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@prisma/client": "^4.7.1",
+    "@prisma/client": "^5.1.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/nodemailer": "^6.4.7",
     "bcryptjs": "^2.4.3",
@@ -72,7 +81,7 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "pm2": "^5.2.2",
-    "uuid": "^9.0.0",
+    "uuid": "^7.0.3",
     "winston": "^3.8.2",
     "xss-filters": "^1.2.7"
   }
