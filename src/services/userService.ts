@@ -3,11 +3,16 @@ import httpStatus from 'http-status';
 import prisma from '../client';
 import ApiError from '../utilities/ApiError';
 import { encryptPassword } from '../utilities/encryption';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Key } from 'readline';
 
 /**
  * Create a user
- * @param {Object} userBody
  * @returns {Promise<User>}
+ * @param email
+ * @param password
+ * @param name
+ * @param role
  */
 const createUser = async (
   email: string,
@@ -32,6 +37,7 @@ const createUser = async (
  * Query for users
  * @param {Object} filter - Mongo filter
  * @param {Object} options - Query options
+ * @param keys
  * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
  * @param {number} [options.limit] - Maximum number of results per page (default = 10)
  * @param {number} [options.page] - Current page (default = 1)
@@ -77,21 +83,14 @@ const queryUsers = async <Key extends keyof User>(
  * @returns {Promise<Pick<User, Key> | null>}
  */
 const getUserById = async <Key extends keyof User>(
-  id: number,
-  keys: Key[] = [
-    'id',
-    'email',
-    'name',
-    'password',
-    'role',
-    'isEmailVerified',
-    'createdAt',
-    'updatedAt'
-  ] as Key[]
+  id: string,
+  keys?: string[]
 ): Promise<Pick<User, Key> | null> => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return prisma.user.findUnique({
     where: { id },
-    select: keys.reduce((obj, k) => ({ ...obj, [k]: true }), {})
+    select: keys?.reduce((obj, k) => ({ ...obj, [k]: true }), {})
   }) as Promise<Pick<User, Key> | null>;
 };
 
@@ -124,10 +123,11 @@ const getUserByEmail = async <Key extends keyof User>(
  * Update user by id
  * @param {ObjectId} userId
  * @param {Object} updateBody
+ * @param keys
  * @returns {Promise<User>}
  */
 const updateUserById = async <Key extends keyof User>(
-  userId: number,
+  userId: string,
   updateBody: Prisma.UserUpdateInput,
   keys: Key[] = ['id', 'email', 'name', 'role'] as Key[]
 ): Promise<Pick<User, Key> | null> => {
@@ -151,7 +151,7 @@ const updateUserById = async <Key extends keyof User>(
  * @param {ObjectId} userId
  * @returns {Promise<User>}
  */
-const deleteUserById = async (userId: number): Promise<User> => {
+const deleteUserById = async (userId: string): Promise<User> => {
   const user = await getUserById(userId);
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
