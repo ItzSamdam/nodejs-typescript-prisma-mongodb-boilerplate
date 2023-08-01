@@ -1,6 +1,6 @@
 import httpStatus from 'http-status';
-import tokenService from './token.service';
-import userService from './user.service';
+import tokenService from './tokenService';
+import userService from './userService';
 import ApiError from '../utilities/ApiError';
 import { TokenType, User } from '@prisma/client';
 import prisma from '../client';
